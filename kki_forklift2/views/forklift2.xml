@@ -1,0 +1,58 @@
+<odoo>
+    <data>
+        <!-- explicit list view definition -->
+        <record model="ir.ui.view" id="kki_forklift2.list">
+            <field name="name">kki_forklift2 list</field>
+            <field name="model">kki_forklift2.forklift2</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="name"/>
+                    <field name="image"/>
+                </tree>
+            </field>
+        </record>
+
+        <record model="ir.ui.view" id="kki_forklift2.form">
+            <field name="name">kki_forklift2 form</field>
+            <field name="model">kki_forklift2.forklift2</field>
+            <field name="arch" type="xml">
+                <form>
+                    <sheet>
+                        <group>
+                            <field name="name"/>
+                            <field name="image" widget="image"/>
+                        </group>
+                    </sheet>
+                </form>
+
+            </field>
+        </record>
+
+
+        <!-- Top menu item トップページ-->
+        <menuitem name="カーコレクション" id="kki_forklift2.menu_root"
+                  web_icon="kki_forklift2,static/description/forklift_icon.png"/>
+
+
+        <!-- actions opening views on models
+        modelを開くためのツール 　action idから受け取り-->
+        <record model="ir.actions.act_window" id="kki_forklift2.action_window">
+            <field name="name">kki_forklift2（学習用）</field>
+            <field name="res_model">kki_forklift2.forklift2</field>
+            <field name="view_mode">tree,form</field>
+        </record>
+
+        <!-- menu categories -->
+        <!--        画像を入れる際に必要-->
+        <menuitem name="lift2" id="kki_forklift2.lift" parent="kki_forklift2.menu_root"/>
+        <!--
+            <menuitem name="Menu 2" id="kki_forklift.menu_2" parent="kki_forklift.menu_root"/>
+        -->
+
+        <!-- actions -->
+        <!--        トップ画面に画像を表示 action先のidにつながる-->
+        <menuitem name="lift2" id="kki_forklift2.forklift2_list" parent="kki_forklift2.lift"
+                  action="kki_forklift2.action_window"/>
+
+    </data>
+</odoo>

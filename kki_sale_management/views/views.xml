@@ -1,0 +1,69 @@
+<odoo>
+  <data>
+    <!-- explicit list view definition -->
+
+    <record model="ir.ui.view" id="kki_sale_management.form">
+      <field name="name">kki_sale_management form</field>
+      <field name="model">sale.order</field>
+      <field name="inherit_id" ref="sale.view_order_form"/>
+      <field name="arch" type="xml">
+        <xpath expr="//notebook" position="before">
+          <group>
+            <group>
+              <field name="memo" string="メモ"/>
+              <field name="note"/>
+            </group>
+            <group>
+              <field name="x_selection" string="選択"/>
+              <field name="x_m2o"/>
+              <field name="value" string="整数"/>
+              <field name="value2" string="少数点"/>
+            </group>
+          </group>
+        </xpath>
+      </field>
+    </record>
+
+    <!-- actions opening views on models -->
+<!--
+    <record model="ir.actions.act_window" id="kki_sale_management.action_window">
+      <field name="name">kki_sale_management window</field>
+      <field name="res_model">kki_sale_management.kki_sale_management</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+-->
+
+    <!-- server action to the one above -->
+<!--
+    <record model="ir.actions.server" id="kki_sale_management.action_server">
+      <field name="name">kki_sale_management server</field>
+      <field name="model_id" ref="model_kki_sale_management_kki_sale_management"/>
+      <field name="state">code</field>
+      <field name="code">
+        action = {
+          "type": "ir.actions.act_window",
+          "view_mode": "tree,form",
+          "res_model": model._name,
+        }
+      </field>
+    </record>
+-->
+
+    <!-- Top menu item -->
+<!--
+    <menuitem name="kki_sale_management" id="kki_sale_management.menu_root"/>
+-->
+    <!-- menu categories -->
+<!--
+    <menuitem name="Menu 1" id="kki_sale_management.menu_1" parent="kki_sale_management.menu_root"/>
+    <menuitem name="Menu 2" id="kki_sale_management.menu_2" parent="kki_sale_management.menu_root"/>
+-->
+    <!-- actions -->
+<!--
+    <menuitem name="List" id="kki_sale_management.menu_1_list" parent="kki_sale_management.menu_1"
+              action="kki_sale_management.action_window"/>
+    <menuitem name="Server to list" id="kki_sale_management" parent="kki_sale_management.menu_2"
+              action="kki_sale_management.action_server"/>
+-->
+  </data>
+</odoo>
