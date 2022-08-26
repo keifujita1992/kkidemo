@@ -10,7 +10,14 @@
                      <field name="marge_name" invisible="1"/>
                  </xpath>
             </field>
+            <field name="inherit_id" ref="product.product_template_only_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='default_code']" position="after">
+                    <field name="unified_id"/>
+                </xpath>
+            </field>
         </record>
+
 
         <record model="ir.ui.view" id="kki_product.list">
             <field name="name">kki_product list</field>
