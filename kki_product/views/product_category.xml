@@ -6,7 +6,7 @@
       <field name="view_mode">tree,form</field>
     </record>
 
-    <menuitem name="category" id="product_category_list" parent="product.template"
+    <menuitem name="category" id="product_category_list" parent="stock.menu_product_variant_config_stock"
               action="size_action_window"/>
   </data>
 </odoo>
