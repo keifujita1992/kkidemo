@@ -11,6 +11,7 @@ class kki_product(models.Model):
 
     unified_id = fields.Char("unified_id")
 
+    category = fields.Many2one("product_category",string="category")
 
 
     @api.depends('name', 'name2')

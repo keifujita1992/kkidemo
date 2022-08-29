@@ -1,0 +1,12 @@
+<odoo>
+  <data>
+    <record model="ir.actions.act_window" id="size_action_window">
+      <field name="name">product_category window</field>
+      <field name="res_model">product_category</field>
+      <field name="view_mode">tree,form</field>
+    </record>
+
+    <menuitem name="category" id="product_category_list" parent="product.template"
+              action="size_action_window"/>
+  </data>
+</odoo>
